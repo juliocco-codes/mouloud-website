@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travels Holidays in Morocco — Authentic Tours with Mouloud Tazint</title>
+  <meta name="description" content="Authentic guided tours through Morocco's Sahara Desert, Atlas Mountains and Atlantic Coast. Trekking, camel safaris, 4x4 tours and custom trips with certified local guide Mouloud Tazint.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sand: #E8D5B7;
+      --sand-light: #F5EDE0;
+      --sand-dark: #C4A882;
+      --night: #1A1612;
+      --night-mid: #2C2520;
+      --terracotta: #C4663A;
+      --terracotta-dark: #A8522B;
+      --sky: #6B8FA3;
+      --cream: #FAF6F0;
+      --text-primary: #1A1612;
+      --text-secondary: #5C5248;
+      --text-light: #FAF6F0;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-primary);
+      background-color: var(--cream);
+      font-weight: 300;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    /* ============ NAV ============ */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.2rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: transparent;
+      transition: background 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    nav.scrolled {
+      background: rgba(26, 22, 18, 0.95);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+
+    nav .logo {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--cream);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    nav .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    nav .nav-links a {
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.85;
+      transition: opacity 0.3s;
+    }
+
+    nav .nav-links a:hover {
+      opacity: 1;
+    }
+
+    /* ============ HERO ============ */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/hero-camel-caravan-silhouette.png');
+      background-size: cover;
+      background-position: center 60%;
+      filter: brightness(0.6);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 2rem;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 400;
+      color: var(--cream);
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--sand-light);
+      font-weight: 300;
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.04em;
+    }
+
+    .hero .cta {
+      display: inline-block;
+      padding: 1rem 2.8rem;
+      border: 1.5px solid var(--sand);
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: all 0.4s ease;
+    }
+
+    .hero .cta:hover {
+      background: var(--terracotta);
+      border-color: var(--terracotta);
+    }
+
+    /* ============ SECTION COMMON ============ */
+    section {
+      padding: 6rem 2rem;
+    }
+
+    .section-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    /* ============ ABOUT ============ */
+    .about {
+      background: var(--cream);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      margin-bottom: 1.2rem;
+      color: var(--text-secondary);
+    }
+
+    .about-images {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      gap: 1.5rem;
+    }
+
+    .about-images img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+
+    .about-images img:first-child {
+      aspect-ratio: 4/5;
+      object-fit: cover;
+    }
+
+    .about-images img:last-child {
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+
+    /* ============ TOURS ============ */
+    .tours {
+      background: var(--night);
+      color: var(--text-light);
+    }
+
+    .tours .section-title {
+      color: var(--cream);
+    }
+
+    .tours-intro {
+      max-width: 650px;
+      color: var(--sand-dark);
+      margin-bottom: 3.5rem;
+    }
+
+    .tour-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .tour-card {
+      background: var(--night-mid);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .tour-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .tour-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .tour-card-body {
+      padding: 1.8rem;
+    }
+
+    .tour-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      color: var(--cream);
+    }
+
+    .tour-card p {
+      color: var(--sand-dark);
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.65;
+    }
+
+    .tour-price {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+    }
+
+    /* ============ GALLERY ============ */
+    .gallery {
+      background: var(--sand-light);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+      cursor: pointer;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+    }
+
+    .gallery-grid img:nth-child(1) {
+      grid-column: span 2;
+      grid-row: span 2;
+      aspect-ratio: 1;
+    }
+
+    /* ============ CONTACT ============ */
+    .contact {
+      background: var(--night);
+      color: var(--text-light);
+      text-align: center;
+    }
+
+    .contact .section-title {
+      color: var(--cream);
+    }
+
+    .contact-intro {
+      color: var(--sand-dark);
+      max-width: 500px;
+      margin: 0 auto 3rem;
+    }
+
+    .contact-methods {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-method {
+      text-align: center;
+    }
+
+    .contact-method .label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-method a {
+      color: var(--cream);
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      transition: color 0.3s;
+    }
+
+    .contact-method a:hover {
+      color: var(--terracotta);
+    }
+
+    .whatsapp-btn {
+      display: inline-block;
+      margin-top: 2.5rem;
+      padding: 1rem 3rem;
+      background: #25D366;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: background 0.3s;
+    }
+
+    .whatsapp-btn:hover {
+      background: #1EBE57;
+    }
+
+    /* ============ FOOTER ============ */
+    footer {
+      background: var(--night);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 2rem;
+      text-align: center;
+      color: var(--sand-dark);
+      font-size: 0.8rem;
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 768px) {
+      nav .nav-links {
+        display: none;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .about-images {
+        order: -1;
+      }
+
+      .tour-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-grid img:nth-child(1) {
+        grid-column: span 2;
+        grid-row: span 1;
+        aspect-ratio: 16/9;
+      }
+
+      .contact-methods {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      section {
+        padding: 4rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#" class="logo">Travels Holidays in Morocco</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#tours">Tours</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1>Travels Holidays in Morocco</h1>
+      <p>Authentic tours through the Sahara Desert, Atlas Mountains &amp; Atlantic Coast</p>
+      <a href="#tours" class="cta">View Our Tours</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-container about-grid">
+      <div class="about-text">
+        <div class="section-label">About Your Guide</div>
+        <h2 class="section-title">Mouloud Tazint</h2>
+        <p>I am a certified mountain guide based in Marrakech, and I have spent my life leading travellers through the landscapes of southern Morocco — the Sahara Desert, the Atlas Mountains, and the Atlantic coast.</p>
+        <p>I run a small, local travel operation built on a simple idea: fair trade tourism. We work with local families, buy from local markets, and travel with our own animals — mules in the mountains, camels in the desert. They are our companions, not rental equipment.</p>
+        <p>Our prices sit in the middle: not low-cost, not luxury. Good enough that you experience something real, fair enough that the money stays in the communities we pass through.</p>
+        <p>Whether you want to trek to the summit of Mount Toubkal, cross the Sahara by camel, or explore the kasbahs of the south by 4x4 — I will build a trip around what you want to see.</p>
+      </div>
+      <div class="about-images">
+        <img src="images/about-mouloud-tea-campfire.jpg" alt="Mouloud Tazint preparing traditional tea by a campfire in the Sahara Desert" loading="lazy">
+        <img src="images/about-two-guides-camel.jpg" alt="Local guides walking with camels through the Moroccan desert" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- TOURS -->
+  <section class="tours" id="tours">
+    <div class="section-container">
+      <div class="section-label">Our Tours</div>
+      <h2 class="section-title">Travels &amp; Packages</h2>
+      <p class="tours-intro">We organise holidays and travel from 2 days to 3 weeks. Every trip can start from any airport or city in Morocco. Choose your own combination of activities, or let us suggest a route.</p>
+
+      <div class="tour-grid">
+
+        <div class="tour-card">
+          <img src="images/tour-day-trips-africa-mural.jpg" alt="Colourful Africa mural on a desert building in southern Morocco" loading="lazy">
+          <div class="tour-card-body">
+            <h3>Day Trips</h3>
+            <p>Short escapes from Marrakech to Ait Benhaddou, the kasbahs of Ouarzazate, Ouzoud waterfalls, the desert camp at Zagora, or the coastal town of Essaouira. Perfect for a quick private trip when time is short.</p>
+            <div class="tour-price">2 days · From €220 per person</div>
+          </div>
+        </div>
+
+        <div class="tour-card">
+          <img src="images/tour-sahara-group-sunset-dunes.jpg" alt="Group of tourists posing on Sahara sand dunes at sunset" loading="lazy">
+          <div class="tour-card-body">
+            <h3>Sahara Safari</h3>
+            <p>Your first real encounter with the Sahara. Travel by 4x4 to the dunes of Merzouga or Chegaga. Spend your nights in desert camps among the sand seas — one night in a fertile oasis valley, another under the stars in the open desert.</p>
+            <div class="tour-price">3 days · From €330 per person</div>
+          </div>
+        </div>
+
+        <div class="tour-card">
+          <img src="images/tour-discovery-campfire-night.jpg" alt="Guide cooking by campfire at night in the Sahara with camel nearby" loading="lazy">
+          <div class="tour-card-body">
+            <h3>Discovery Tours</h3>
+            <p>A fully personalised journey through Morocco's wild interior. Choose to walk or ride. Move between valleys, mountain passes, and ancient medinas. Four days is enough to reach places most visitors never see.</p>
+            <div class="tour-price">3–4 days · From €440 per person</div>
+          </div>
+        </div>
+
+        <div class="tour-card">
+          <img src="images/tour-trekking-summit-group.jpg" alt="Mouloud and tourists at the summit of Mount Toubkal" loading="lazy">
+          <div class="tour-card-body">
+            <h3>Mountain Trekking</h3>
+            <p>Multi-day treks through the High Atlas with mules carrying your gear, or across the Sahara with camels. Professional local teams, all meals and camping included. Routes to any destination, including the summit of Mount Toubkal (4,167m).</p>
+            <div class="tour-price">5+ days · From €170 per person per day</div>
+          </div>
+        </div>
+
+        <div class="tour-card">
+          <img src="images/tour-safari-camel-caravan-walking.jpg" alt="Guides walking with loaded camels across flat desert terrain" loading="lazy">
+          <div class="tour-card-body">
+            <h3>Safari Tours</h3>
+            <p>Choose your own route through southern Morocco by 4x4. Visit the destinations you want, spend as long as you like. Car, driver, accommodation and guide all included.</p>
+            <div class="tour-price">5+ days · From €150 per person per day</div>
+          </div>
+        </div>
+
+        <div class="tour-card">
+          <img src="images/tour-week-camp-lanterns-stars.jpg" alt="Desert camp illuminated by lanterns under a starry night sky" loading="lazy">
+          <div class="tour-card-body">
+            <h3>Week-Long Expeditions</h3>
+            <p>Full-week tours departing from any airport or city in Morocco. Combine hiking, safari, and cultural visits into one extended journey. Special rates for longer trips.</p>
+            <div class="tour-price">6–7 days · From €555 per person</div>
+          </div>
+        </div>
+
+        <div class="tour-card">
+          <img src="images/tour-custom-group-dinner-tent.jpg" alt="Group of tourists sharing dinner by candlelight in a desert tent" loading="lazy">
+          <div class="tour-card-body">
+            <h3>Custom &amp; Thematic Trips</h3>
+            <p>Longer stays, yoga retreats, meditation trips, special events, or simply a slow journey through Morocco at your own pace. Tell us what you want, and we will build it. The longer you stay, the deeper you go.</p>
+            <div class="tour-price">Price on request</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="section-container">
+      <div class="section-label">Gallery</div>
+      <h2 class="section-title">Moments from Our Tours</h2>
+      <div class="gallery-grid">
+        <img src="images/gallery-camp-lanterns-wide.jpg" alt="Desert camp at night with lanterns and tents under the stars" loading="lazy">
+        <img src="images/gallery-toubkal-snow-summit.jpg" alt="Hikers approaching the summit of Mount Toubkal in snow" loading="lazy">
+        <img src="images/gallery-family-sand-dunes.jpg" alt="Family with children enjoying the Sahara sand dunes" loading="lazy">
+        <img src="images/gallery-camel-closeup-tourists.jpg" alt="Close-up of a camel with tourists in blue turbans" loading="lazy">
+        <img src="images/gallery-desert-bivouac-sunset.jpg" alt="Desert bivouac camp at sunset with tents and campfire" loading="lazy">
+        <img src="images/gallery-tagines.jpg" alt="Traditional Moroccan tagine pots" loading="lazy">
+        <img src="images/gallery-camel-beach.jpg" alt="Camel being led along the Atlantic coast beach" loading="lazy">
+        <img src="images/gallery-baby-camel-sunset.jpg" alt="Baby camel at sunset in the Sahara" loading="lazy">
+        <img src="images/gallery-camp-dusk-lanterns.jpg" alt="Glamping tent with lanterns at dusk in the desert" loading="lazy">
+        <img src="images/gallery-guide-leading-camel.jpg" alt="Guide leading a camel through the desert" loading="lazy">
+        <img src="images/gallery-mouloud-selfie-tourists-summit.jpg" alt="Mouloud with tourists at a mountain summit" loading="lazy">
+        <img src="images/gallery-loading-camel-tree.jpg" alt="Loading supplies onto a camel under a desert tree" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-container">
+      <div class="section-label">Get in Touch</div>
+      <h2 class="section-title">Plan Your Trip</h2>
+      <p class="contact-intro">Ready to explore Morocco? Contact Mouloud directly to discuss your trip. No middlemen, no agencies — just you and your guide.</p>
+
+      <div class="contact-methods">
+        <div class="contact-method">
+          <div class="label">WhatsApp</div>
+          <a href="https://wa.me/212670956579">+212 670 956 579</a>
+        </div>
+        <div class="contact-method">
+          <div class="label">Email</div>
+          <a href="mailto:placeholder@gmail.com">placeholder@gmail.com</a>
+        </div>
+        <div class="contact-method">
+          <div class="label">Based in</div>
+          <a href="#">Marrakech, Morocco</a>
+        </div>
+      </div>
+
+      <a href="https://wa.me/212670956579?text=Hello%20Mouloud%2C%20I%20am%20interested%20in%20a%20tour%20in%20Morocco." class="whatsapp-btn">Message on WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Travels Holidays in Morocco — Mouloud Tazint, Certified Mountain Guide</p>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 80);
+    });
+  </script>
+
+</body>
+</html>
